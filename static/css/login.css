@@ -96,6 +96,7 @@ label span {
   display: inline-block;
   position: relative;
   cursor: pointer;
+  float: left;
   left: 7.5%;
   top: 62.3%;
 }
