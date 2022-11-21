@@ -1,16 +1,5 @@
 <script lang="ts">
-    async function login(e: { target: HTMLFormElement | undefined; }) {
-      const formData = new FormData(e.target)
-      const inputs = {}
-      for (const field of formData) {
-          const [key, val] = field;
-          inputs[key] = val
-      }
-      console.log(inputs)
-      const res = await fetch(`http://localhost:8001/api/logindummy?email=${inputs.email}&password=${inputs.password}`)
-      const data = await res.json()
-      console.log("data", data)
-    }
+    console.log("stiff", process.env)
   </script>
   
   <svelte:head>
@@ -38,7 +27,7 @@
     <div class="animated bounceInDown">
       <div class="container">
         <span class="error animated tada" id="msg" />
-        <form name="form1" class="box" on:submit|preventDefault={login}>
+        <form name="form1" class="box" method="POST">
           <a href="/" style="text-decoration: none;">
             <h4>Study<span>Verse</span></h4>
           </a>
@@ -74,7 +63,6 @@
       src="js/input.js"
     ></script>
     <script src="/js/icon.js" defer></script>
-    <script src="/js/login.js" defer></script>
   </main>
 
   
