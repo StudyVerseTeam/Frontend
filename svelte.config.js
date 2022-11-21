@@ -9,9 +9,6 @@ const config = {
 	kit: {
 		adapter: adapter({
 			out: 'dist',
-			env : {
-				port: 8080
-			},
 		})
 	}
 };

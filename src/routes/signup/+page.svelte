@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"><link rel="stylesheet" href="css/login.css">
 <script src="/js/icon.js" defer></script>
+<script>
+  
+</script>
 </head>
 <body>
 <!-- partial:index.partial.html -->
