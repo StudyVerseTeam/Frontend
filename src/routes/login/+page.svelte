@@ -1,7 +1,6 @@
 <script lang="ts">
-    console.log("stiff", process.env)
-  </script>
-  
+  import {user} from '../../store'
+</script>
   <svelte:head>
     <meta charset="UTF-8" />
     <title>Login page</title>
@@ -18,7 +17,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
     />
-  
     <link rel="stylesheet" type="text/css" href="/css/login.css" />
   </svelte:head>
   <main>

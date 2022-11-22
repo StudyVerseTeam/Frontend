@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<script>
+  import {user} from '../store.js'
+</script>
 <head>
 <meta charset="utf-8" />
 <meta
