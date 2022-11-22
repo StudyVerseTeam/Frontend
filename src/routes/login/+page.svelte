@@ -60,7 +60,6 @@
     <script src="https://cldup.com/S6Ptkwu_qA.js"></script><script
       src="js/input.js"
     ></script>
-    <script src="/js/icon.js" defer></script>
   </main>
 
   

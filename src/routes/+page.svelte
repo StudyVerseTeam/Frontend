@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <script>
-  import {user} from '../store.js'
+  // use later
+  // import {user} from '../store.js'
 </script>
 <head>
+  <title>Studyverse</title>
+</head>
 <meta charset="utf-8" />
 <meta
   name="viewport"
@@ -10,7 +13,6 @@
 />
 <link rel="stylesheet" href="/css/main.css" />
 <noscript><link rel="stylesheet" href="/css/noscript.css" type="text/css"/></noscript>
-<head>
   <body class="is-preload">
     <!-- Wrapper -->
     <div id="wrapper">
@@ -148,7 +150,4 @@
     <script src="/js/breakpoints.min.js"></script>
     <script src="/js/util.js"></script>
     <script src="/js/main.js"></script>
-    <script src="/js/icon.js" defer></script>
   </body>
-</head>
-</head>

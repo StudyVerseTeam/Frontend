@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<script src="/js/icon.js" defer></script>
 <html lang="en">
   <head>
     <title>Study Verse</title>
