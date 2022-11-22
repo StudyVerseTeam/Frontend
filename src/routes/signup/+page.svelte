@@ -112,7 +112,7 @@
 <div class="animated bounceInDown">
   <div class="container">
     <span class="error animated tada" id="msg"></span>
-    <form name="form1" class="box" onsubmit="return checkStuff()">
+    <form name="form1" class="box" method="post" onsubmit="return checkStuff()">
      <a href="/" style="text-decoration: none;">
        <h4>Study<span>Verse</span></h4>
      </a>
@@ -132,7 +132,9 @@
   </div> 
   </div> 
 <!-- partial -->
-  <script src="https://cldup.com/S6Ptkwu_qA.js"></script><script  src="js/input.js"></script>
+<script src="https://cldup.com/S6Ptkwu_qA.js"></script>
+
+<script  src="js/input.js"></script>
 
 </body>
 
