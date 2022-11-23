@@ -5,7 +5,7 @@ export const actions = {
         // get data
         const formData = await request.formData();
         // get the result
-        console.log(`${import.meta.env.VITE_SIGNUP_URL}/api/signup?name=${formData.get('name')}&email=${formData.get('email')}&pwd=${formData.get('password')}`)
+        console.log(`${import.meta.env.VITE_SIGNUP_URL}/api/signup?name=${encodeURIComponent(formData.get('name'))}&email=${encodeURIComponent(formData.get('email'))}&pwd=${encodeURIComponent(formData.get('password'))}`)
         const res = await fetch(`${import.meta.env.VITE_SIGNUP_URL}/api/signup?name=${formData.get('name')}&email=${formData.get('email')}&pwd=${formData.get('password')}`)
         // get the json
         const data = await res.json()
