@@ -13,34 +13,44 @@ function togglePass(){
 // Form Validation
 
 function checkStuff() {
-  var email = document.form1.email;
-  var password = document.form1.password;
-  var msg = document.getElementById('msg');
-  
+  let email = document.form1.email;
+  let password = document.form1.password;
+  let msg = document.getElementById('msg'); 
+  let name = document.getElementById("name");
   if (email.value == "") {
     msg.style.display = 'block';
     msg.innerHTML = "Please enter your email";
-    email.focus();
     return false;
   } else {
     msg.innerHTML = "";
+    msg.style.display = "none"
   }
-  
+  if ( name ) {
+    if (name.value == "") {
+      msg.innerHTML = "Please enter your name";
+      msg.style.display = "block"
+      return false;
+    } else {
+      msg.innerHTML = "";
+      msg.style.display = "none"
+    }
+  }
    if (password.value == "") {
     msg.innerHTML = "Please enter your password";
-    password.focus();
+    msg.style.display = "block"
     return false;
   } else {
     msg.innerHTML = "";
+    msg.style.display = "none"
   }
    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (!re.test(email.value)) {
     msg.innerText = "Please enter a valid email";
     msg.style.display = "block"
-    email.focus();
     return false;
   } else {
     msg.innerHTML = "";
+    msg.style.display = "none"
   }
 }
 
