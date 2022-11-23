@@ -14,7 +14,7 @@ export const actions = {
           user.set(data)
             //redirect them
             throw redirect(303, '/')
-        } else if (data.error != null) {
+        } else if (data.error !== null) {
           return {error: true, msg: data.error}
         }
     }
