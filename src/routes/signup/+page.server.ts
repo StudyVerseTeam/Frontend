@@ -5,10 +5,19 @@ export const actions = {
         // get data
         const formData = await request.formData();
         // get the result
-        console.log(`${import.meta.env.VITE_SIGNUP_URL}/api/signup?name=${encodeURIComponent(formData.get('name'))}&email=${encodeURIComponent(formData.get('email'))}&pwd=${encodeURIComponent(formData.get('password'))}`)
-        const res = await fetch(`${import.meta.env.VITE_SIGNUP_URL}/api/signup?name=${formData.get('name')}&email=${formData.get('email')}&pwd=${formData.get('password')}`)
+        const res = await fetch(`${import.meta.env.VITE_SIGNUP_URL}/api/signup?name=${encodeURIComponent(formData.get('name'))}&email=${encodeURIComponent(formData.get('email'))}&pwd=${encodeURIComponent(formData.get('password'))}`)
         // get the json
-        const data = await res.json()
+
+        const raw = await res.json()
+        let data = raw
+        for (let i =0; i < raw.length; i ++) {
+          if ( raw[i] == "email" || raw[i] == "pass" || raw[i] == "name") {
+              data[i] = decodeURIComponent(raw[i]) 
+          } else {
+            data[i] = raw[i]
+          }
+        }
+        console.log(data)
         // make the user store data
         if (data.Error == "Account already exists") {
           throw redirect(303, '/login')

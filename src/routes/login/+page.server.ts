@@ -4,10 +4,7 @@ export const actions = {
     default: async ({request}:any) => {
         // get data
         const formData = await request.formData();
-        console.log(import.meta.env.VITE_API_URL)
         // get the resulta
-        console.log(encodeURIComponent(formData.get('password')))
-        console.log(encodeURIComponent(formData.get('email')))
         const res = await fetch(`${import.meta.env.VITE_API_URL}/api/login?email=${encodeURIComponent(formData.get('email'))}&password=${encodeURIComponent(formData.get('password'))}`)
         // get the json
         const raw = await res.json()
@@ -19,7 +16,6 @@ export const actions = {
             data[i] = raw[i]
           }
         }
-        console.log(data)
         // make the user store data
         // if the user exists
         if (data.exists) {
