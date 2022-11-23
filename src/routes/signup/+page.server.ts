@@ -9,11 +9,14 @@ export const actions = {
         const res = await fetch(`${import.meta.env.VITE_SIGNUP_URL}/api/signup?name=${formData.get('name')}&email=${formData.get('email')}&pwd=${formData.get('password')}`)
         // get the json
         const data = await res.json()
-        console.log("data", data)
         // make the user store data
-        user.set(data)
-//        // if the user exists
-       throw redirect(303, '/')
-//       
+        if (data.Error == "Account already exists") {
+          throw redirect(303, '/login')
+        } else if  (data.Error) {
+          return { error: true , msg: data.Error}   
+        } else {
+          user.set(data)
+          throw redirect(303, '/')
+        }
     }
 }

@@ -1,5 +1,6 @@
 <script lang="ts">
   //import {user} from '../../store'
+  export let form: { error: boolean , msg: string};
   import {onMount} from "svelte"
     import { loadFull } from "tsparticles";
     let ParticlesComponent;
@@ -98,12 +99,43 @@
 
 
 </svelte:head>
+{#if form?.error}
+<main>
+  <div class="container">
+    <div class="text-container">
+      <h1>SERVER ERROR</h1>
+      <p class="home-text">SERVER ERROR</p> <button class="home-btn" on:click={() => {location.href = "/"}}>Home</button>
+      <h3>Contact us at <a href="mailto:studyverseteam@gmail.com">studyverseteam@gmail.com</a></h3>
+    </div>
+  </div>
+</main>
+<style>
+  
+  .text-container {
+    color: white;
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .container {
+    background-size: cover;
+    margin-top: 5em;
+    display:flex;
+    justify-content: center;
+  } 
+  .home-text {
+    font-size: 1.3em;
+  }
+</style>
+{:else}
 <body>
 <!-- partial:index.partial.html -->
 <body id="particles-js"></body>
     <svelte:component
-    this="{ParticlesComponent}"
-    id="tsparticles"
+    this="{ParticlesComponent}" id="tsparticles"
     options="{particlesConfig}"
     on:particlesLoaded="{onParticlesLoaded}"
     particlesInit="{particlesInit}"
@@ -137,4 +169,4 @@
 <script  src="js/input.js"></script>
 
 </body>
-
+{/if}

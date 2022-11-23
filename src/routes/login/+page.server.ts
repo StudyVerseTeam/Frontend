@@ -9,11 +9,13 @@ export const actions = {
         // get the json
         const data = await res.json()
         // make the user store data
-        user.set(data)
         // if the user exists
         if (data.exists) {
+          user.set(data)
             //redirect them
             throw redirect(303, '/')
+        } else if (data.error != null) {
+          return {error: true, msg: data.error}
         }
     }
 }

@@ -1,4 +1,5 @@
 <script lang="ts">
+  export let form: {error: boolean, msg: any}
   //import {user} from '../../store'
   import {onMount} from "svelte"
     import { loadFull } from "tsparticles";
@@ -87,6 +88,7 @@
         await loadFull(engine);
     };
 </script>
+
   <svelte:head>
     <meta charset="UTF-8" />
     <title>Login page</title>
@@ -106,6 +108,38 @@
     <link rel="stylesheet" type="text/css" href="/css/login.css" />
   </svelte:head>
   <main>
+    {#if form?.error}
+      <div class="container">
+    <div class="text-container">
+      <h1>SERVER ERROR</h1>
+      <p class="home-text">SERVER ERROR: {form?.msg}</p>
+      <button class="home-btn" on:click={() => {location.href = "/"}}>Home</button>
+      <h3>Contact us at <a href="mailto:studyverseteam@gmail.com">studyverseteam@gmail.com</a></h3>
+    </div>
+  </div>
+<style>
+  
+  .text-container {
+    color: white;
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .container {
+    background-size: cover;
+    margin-top: 5em;
+    display:flex;
+    justify-content: center;
+  } 
+  .home-text {
+    font-size: 1.3em;
+  }
+</style>
+
+    {:else}
     <!-- partial:index.partial.html -->
     <body id="particles-js">
       <svelte:component
@@ -154,6 +188,7 @@
 <script defer
       src="js/input.js"
       ></script>
+    {/if}
   </main>
 
   
