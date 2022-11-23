@@ -144,7 +144,7 @@
 <div class="animated bounceInDown">
   <div class="container">
     <span class="error animated tada" id="msg"></span>
-    <form name="form1" class="box" method="POST" >
+    <form name="form1" class="box" method="POST" onclick="return checkStuff()">
      <a href="/" style="text-decoration: none;">
        <h4>Study<span>Verse</span></h4>
      </a>
