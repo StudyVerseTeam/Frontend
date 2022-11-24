@@ -1,9 +1,12 @@
 <script lang="ts">
   //import {user} from '../../store'
   export let form: { error: boolean , msg: string};
+  import {page} from '$app/stores'
+  let token = $page.params.token
   import {onMount} from "svelte"
     import { loadFull } from "tsparticles";
-    let ParticlesComponent;
+
+        let ParticlesComponent;
     const particlesConfig = {
         particles: {
             color: {
@@ -77,7 +80,7 @@
       let onParticlesLoaded = event => {
         const particlesContainer = event.detail.particles;
 
-        // you can use particlesContainer to call all the Container class
+        //you can use particlesContainer to call all the Container class
         // (from the core library) methods like play, pause, refresh, start, stop
     };
 
@@ -95,7 +98,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"><link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="/css/login.css">
 
 
 </svelte:head>
@@ -149,10 +154,17 @@
        <h4>Study<span>Verse</span></h4>
      </a>
       <h5>Sign up</h5>
-        <input type="text" name="email" placeholder="Email" autocomplete="off">
-        <input type="submit" value="Next" class="btn1">
+      <input type="name" name="name" placeholder="Name" autocomplete="off" id="name" >
+        <input type="password" name="password" placeholder="Password" id="pwd" autocomplete="off">
+        <i class="typcn typcn-eye" id="eye"></i>
+        <input type="text" readonly  name="email"  placeholder="Email" autocomplete="off">
+        <label>
+          <input type="checkbox">
+          <span></span>
+          <small class="rmb">Remember me</small>
+        </label>
+        <input type="submit" value="Sign up" class="btn1">
       </form>
-    <a href="/login" class="dnthave">Already have an account? Sign in.</a>
   </div> 
   </div> 
 <!-- partial -->
@@ -161,11 +173,4 @@
 <script  src="js/input.js"></script>
 
 </body>
-{/if}
-<style>
-  .box {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-  }
-</style>
+{/if} 
