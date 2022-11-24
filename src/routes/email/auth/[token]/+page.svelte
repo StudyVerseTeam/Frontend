@@ -157,7 +157,6 @@
       <input type="name" name="name" placeholder="Name" autocomplete="off" id="name" >
         <input type="password" name="password" placeholder="Password" id="pwd" autocomplete="off">
         <i class="typcn typcn-eye" id="eye"></i>
-        <input type="text" readonly  name="email"  placeholder="Email" autocomplete="off">
         <label>
           <input type="checkbox">
           <span></span>
