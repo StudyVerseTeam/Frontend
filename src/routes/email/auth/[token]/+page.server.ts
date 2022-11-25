@@ -1,6 +1,7 @@
 import {error} from '@sveltejs/kit'
 import {user} from '../../../../store.js'
 import {redirect} from '@sveltejs/kit'
+let email = '';
 export async function load({params}) {
   if (params.token) {
     const res = await fetch(`${import.meta.env.VITE_VERIFY_URL}/email/auth?token=${params.token}`)
@@ -8,7 +9,7 @@ export async function load({params}) {
     if (data.Error == "Token invalid") {
       throw error(404, 'Not Found')
     }
-    const email = data.Email;
+    email = data.Email;
     return {
       email
     }
@@ -19,7 +20,7 @@ export const actions = {
         // get data
         const formData = await request.formData();
         // get the result
-        const res = await fetch(`${import.meta.env.VITE_SIGNUP_URL}/api/signup?name=${encodeURIComponent(formData.get('name'))}&email=${encodeURIComponent(formData.get('email'))}&pwd=${encodeURIComponent(formData.get('password'))}`)
+        const res = await fetch(`${import.meta.env.VITE_SIGNUP_URL}/api/signup?name=${encodeURIComponent(formData.get('name'))}&email=${email}&pwd=${encodeURIComponent(formData.get('password'))}`)
         // get the json
 
         const raw = await res.json()
@@ -31,7 +32,6 @@ export const actions = {
             data[i] = raw[i]
           }
         }
-        console.log(data)
         // make the user store data
         if (data.Error == "Account already exists") {
           throw redirect(303, '/login')
