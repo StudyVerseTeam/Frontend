@@ -156,9 +156,9 @@
      </a>
       <h5>Sign up</h5>
       <input type="name" name="name" placeholder="Name" autocomplete="off" id="name" >
-      <input type="email" name="email" readonly bind:value={data.email} placeholder="email" id="email" autocomplete="off">
         <input type="password" name="password" placeholder="Password" id="pwd" autocomplete="off">
         <i class="typcn typcn-eye" id="eye"></i>
+            <input type="email" name="email" readonly bind:value={data.email} placeholder="email" id="email" autocomplete="off">
         <label>
           <input type="checkbox">
           <span></span>
