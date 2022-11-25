@@ -1,6 +1,7 @@
 <script lang="ts">
   //import {user} from '../../store'
   export let form: { error: boolean , msg: string};
+  export let data;
   import {page} from '$app/stores'
   let token = $page.params.token
   import {onMount} from "svelte"
@@ -155,6 +156,7 @@
      </a>
       <h5>Sign up</h5>
       <input type="name" name="name" placeholder="Name" autocomplete="off" id="name" >
+      <input type="email" name="email" readonly bind:value={data.email} placeholder="email" id="email" autocomplete="off">
         <input type="password" name="password" placeholder="Password" id="pwd" autocomplete="off">
         <i class="typcn typcn-eye" id="eye"></i>
         <label>
