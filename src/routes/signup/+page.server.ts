@@ -8,7 +8,8 @@ export const actions = {
         // get the json
 
         const data = await res.json()
-        console.log(data)
+        // edit below with checkmark page upcoming
+        throw redirect(302, "/")
         // make the user store data
     }
 }
