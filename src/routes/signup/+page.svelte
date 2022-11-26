@@ -91,7 +91,7 @@
 
 <svelte:head>
   <meta charset="UTF-8">
-  <title>Login page</title>
+  <title>Sign up</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css">
@@ -148,8 +148,8 @@
      <a href="/" style="text-decoration: none;">
        <h4>Study<span>Verse</span></h4>
      </a>
-      <h5>Sign up</h5>
-        <input class="email" type="text" name="email" placeholder="Email" autocomplete="off">
+     <h5 class="margin-bottom: -5px;">Sign up</h5>
+      <input class="email" type="text" name="email" placeholder="Email" autocomplete="off">
         <input type="submit" value="Next" class="btn1">
       </form>
     <a href="/login" class="dnthave">Already have an account? Sign in.</a>
@@ -169,6 +169,6 @@
     align-items: center;
   }
   .container {
-    height: 500px;
+    height: 450px;
   }
 </style>
