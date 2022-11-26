@@ -149,7 +149,7 @@
        <h4>Study<span>Verse</span></h4>
      </a>
       <h5>Sign up</h5>
-        <input type="text" name="email" placeholder="Email" autocomplete="off">
+        <input class="email" type="text" name="email" placeholder="Email" autocomplete="off">
         <input type="submit" value="Next" class="btn1">
       </form>
     <a href="/login" class="dnthave">Already have an account? Sign in.</a>
@@ -167,5 +167,8 @@
     display:flex;
     flex-direction: column;
     align-items: center;
+  }
+  .container {
+    height: 500px;
   }
 </style>

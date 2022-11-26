@@ -157,6 +157,7 @@
       <h5>Sign up</h5>
       <input type="name" name="name" placeholder="Name" autocomplete="off" id="name" >
         <input type="password" name="password" placeholder="Password" id="pwd" autocomplete="off">
+        <input type="text" name="email" placeholder="Email" id="email" readonly bind:value={data.email}>
         <i class="typcn typcn-eye" id="eye"></i>
      
         <label>
