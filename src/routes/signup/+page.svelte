@@ -148,10 +148,11 @@
      <a href="/" style="text-decoration: none;">
        <h4>Study<span>Verse</span></h4>
      </a>
+     <h5 class="greeting">Sign Up</h5>
       <input class="email" type="text" name="email" placeholder="Email" autocomplete="off">
-        <input type="submit" value="Next" class="btn1">
+        <input type="submit" value="Next" class="btn1" >
       </form>
-    <a href="/login" class="dnthave">Already have an account? Sign in.</a>
+    <a style="margin-top: -0"href="/login" class="dnthave">Already have an account? Sign in.</a>
   </div> 
   </div> 
 <!-- partial -->
@@ -167,11 +168,13 @@
     flex-direction: column;
     align-items: center;
   }
-  .email {
-    position: relative;
-    bottom: -50px;
+  .dnthave {
+    margin-top: 1.2em; 
+  }
+  .greeting {
+    margin-bottom: 15px;
   }
   .container {
-    height: 450px;
+    height: 400px;
   }
 </style>
