@@ -1,6 +1,7 @@
 <script lang="ts">
   //import {user} from '../../store'
-  export let form: { error: boolean , msg: string};
+  export let form: { email: string};
+  const email = "some@gmail.com"
   import {onMount} from "svelte"
     import { loadFull } from "tsparticles";
     let ParticlesComponent;
@@ -99,39 +100,6 @@
 
 
 </svelte:head>
-{#if form?.error}
-<main>
-  <div class="container">
-    <div class="text-container">
-      <h1>SERVER ERROR</h1>
-      <p class="home-text">SERVER ERROR</p> <button class="home-btn" on:click={() => {location.href = "/"}}>Home</button>
-      <h3>Contact us at <a href="mailto:studyverseteam@gmail.com">studyverseteam@gmail.com</a></h3>
-    </div>
-  </div>
-</main>
-<style>
-  
-  .text-container {
-    color: white;
-    width:80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .container {
-    background-size: cover;
-    margin-top: 5em;
-    display:flex;
-    justify-content: center;
-  } 
-  .home-text {
-    font-size: 1.3em;
-  }
-</style>
-{:else}
-<body>
 <!-- partial:index.partial.html -->
 <body id="particles-js"></body>
     <svelte:component
@@ -140,28 +108,34 @@
     on:particlesLoaded="{onParticlesLoaded}"
     particlesInit="{particlesInit}"
 />
-
+<body>
 <div class="animated bounceInDown">
   <div class="container">
-    <span class="error animated tada" id="msg"></span>
+    {#if form?.email}
+      <div style="padding: 2em;">
+        <img src="/images/favicon.ico" width="50" height="50" alt = "logo"/>
+      <h3 style="color:white;"> You are almost done!</h3>
+      <p style="color:white;"> You are almost done <strong>{form?.email}</strong>, now all you have to do is verify your email.</p>
+      <p style="color:white;"> Check your inbox for an email with a link to verify, remember to check your spam folder!</p>
+    </div>
+    {:else}
     <form name="form1" class="box" method="POST" onclick="return checkStuff()">
      <a href="/" style="text-decoration: none;">
        <h4>Study<span>Verse</span></h4>
      </a>
-     <h5 class="greeting">Sign Up</h5>
       <input class="email" type="text" name="email" placeholder="Email" autocomplete="off">
+      <span class="error animated tada" id="msg"></span>
         <input type="submit" value="Next" class="btn1" >
       </form>
-    <a style="margin-top: -0"href="/login" class="dnthave">Already have an account? Sign in.</a>
+        <a style="margin-top: -0;"href="/login" class="dnthave">Already have an account? Sign in.</a>
+    {/if}
   </div> 
   </div> 
 <!-- partial -->
 <script src="https://cldup.com/S6Ptkwu_qA.js"></script>
 
-<script  src="js/input.js"></script>
-
+<script  src="/js/input.js"></script>
 </body>
-{/if}
 <style>
   .box {
     display:flex;
@@ -170,9 +144,6 @@
   }
   .dnthave {
     margin-top: 1.2em; 
-  }
-  .greeting {
-    margin-bottom: 15px;
   }
   .container {
     height: 400px;
