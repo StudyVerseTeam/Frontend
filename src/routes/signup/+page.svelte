@@ -117,8 +117,8 @@
           <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
           <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
         </svg>
-      <h3 style="color:white;"> You are almost done!</h3>
-      <p style="color:white;"> You are almost done <strong>{form?.email}</strong>, now all you have to do is verify your email.</p>
+      <h3 style="color:white;"> We sent an email to you! </h3>
+      <p style="color:white;"> We sent an email to <strong>{form?.email}</strong>, now all you have to do is verify your email.</p>
       <p style="color:white;"> Check your inbox for an email with a link to verify, remember to check your spam folder!</p>
     </div>
     {:else}
