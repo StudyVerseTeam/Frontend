@@ -148,7 +148,6 @@
      <a href="/" style="text-decoration: none;">
        <h4>Study<span>Verse</span></h4>
      </a>
-     <h5 class="margin-bottom: -5px;">Sign up</h5>
       <input class="email" type="text" name="email" placeholder="Email" autocomplete="off">
         <input type="submit" value="Next" class="btn1">
       </form>
@@ -167,6 +166,10 @@
     display:flex;
     flex-direction: column;
     align-items: center;
+  }
+  .email {
+    position: relative;
+    bottom: -50px;
   }
   .container {
     height: 450px;
