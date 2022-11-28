@@ -9,8 +9,7 @@
         particles: {
             color: {
                 value: "#fff",
-            },
-            links: {
+            }, links: {
                 enable: true,
                 distance: 150,
                 color: "#fff",

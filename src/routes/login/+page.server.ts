@@ -20,12 +20,11 @@ export const actions = {
         // if the user exists
         if (data.exists) {
           user.set(data)
-            //redirect them
-            throw redirect(303, '/')
+          return {exists: true, error: false, msg: ""}
+        } else if (data.err) {
+          return {error: true, msg: data.error, exists:false}
         } else if (!data.exists) {
-          return {error: false, msg: "doesnt exist"}
-        } else  {
-          return {error: true, msg: data.error}
+          return {error: false, msg: "", exists: false}
         }
     }
 }
