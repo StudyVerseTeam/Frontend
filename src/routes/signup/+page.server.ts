@@ -8,7 +8,10 @@ export const actions = {
         // get the json
 
         const data = await res.json()
-        console.log(formData.get('email'))
-        return {email: formData.get('email')}
+        if (data.email && !data.Error) {
+          return {email: formData.get('email')}
+        } else if (data.Error == "Email is already in database") {
+          throw redirect(302, '/login')      
+        }
     }
 }
