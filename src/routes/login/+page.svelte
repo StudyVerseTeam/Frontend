@@ -274,13 +274,13 @@
 </style>
         {/if}
       </div>
-    </body>
+ <script 
+      src="/js/input.js"
+      ></script>
+   </body>
     <!-- partial -->
 <script src="https://cldup.com/S6Ptkwu_qA.js"></script>
 
-<script 
-      src="/js/input.js"
-      ></script>
     {/if}
   </main>
 
