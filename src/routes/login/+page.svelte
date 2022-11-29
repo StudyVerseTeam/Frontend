@@ -279,7 +279,7 @@
 <script src="https://cldup.com/S6Ptkwu_qA.js"></script>
 
 <script defer
-      src="js/input.js"
+      src="/js/input.js"
       ></script>
     {/if}
   </main>
