@@ -129,7 +129,7 @@
       <span class="error animated tada" id="msg"></span>
         <input type="submit" value="Next" class="btn1" >
       </form>
-        <a style="margin-top: -0;"href="/login" class="dnthave">Already have an account? Sign in.</a>
+        <a href="/login" class="dnthave">Already have an account? Sign in.</a>
     {/if}
   </div> 
   </div> 
@@ -139,16 +139,16 @@
 <script  src="/js/input.js"></script>
 </body>
 <style>
+  .btn1 {
+    top: 250px
+  }
   .box {
     display:flex;
     flex-direction: column;
     align-items: center;
   }
-  .dnthave {
-    margin-top: 1.2em; 
-  }
   .container {
-    height: 400px;
+    height: 350px;
   }
   .checkmark__circle {
   stroke-dasharray: 166;
