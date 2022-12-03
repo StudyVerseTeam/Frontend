@@ -16,8 +16,7 @@
     }) 
     todos.splice(index, 1)
     todos = todos
-  }
-</script>
+  } </script>
 <main>
   <div class="container">
     <header class="main">
@@ -77,15 +76,18 @@
     justify-content: center;
   }
   .todo h6 {
-    font-size: 0.6em;
+    font-size: 0.8em;
   }
   .description {
-    font-size: 0.5em; 
+    font-size: 0.6em; 
+  }
+  .todos {
+    width : 70%; 
   }
   .todo {
     background: rgba(23, 27, 43, 0.5);
-    padding: 0.5em;
-    padding-bottom: 0.05px;
+    padding: 0.7em;
+    padding-bottom: 5px;
     border-radius: 15px;
     margin-bottom: 1em;
   }
@@ -109,8 +111,8 @@
     place-items: center;
   }
   .dot {
-      height: 15px;
-      width: 15px;
+      height: 25px;
+      width: 25px;
       border: 2px solid white;
   border-radius: 50%;
   display: inline-block;
