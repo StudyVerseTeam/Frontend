@@ -4,8 +4,8 @@
 <script lang="ts">
   let id = 0
   let todos = [
-    {content: "big boiii lengthy description hgue huge boo stop it boooooooo", name:"This is the name", important: false, id: id++},
-    {content: "big boiii lengthy description hgue huge boo stop it boooooooo", name:"This is the name", important: true , id: id++}
+    {content: "Here is your description", name:"This is the name", important: false, id: id++},
+    {content: "This description is a really long one, did I mention it is really long????", name:"This is the name", important: true , id: id++}
   ]
   let visibilty = false;
   let title = '';
@@ -25,9 +25,9 @@
     <div class="todos" >
       {#each todos as todo}
         <div class="{todo.important ? 'important' : ''} todo">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div class="top-g"> 
             <h6>{todo.name}</h6>
-            <button  style="box-shadow: none;" class="delete btn1" type="button" on:click={() => {deleteTodo(todo.id)}}>
+            <button class="delete" type="button" on:click={() => {deleteTodo(todo.id)}}>
               <span class="dot"></span>
             </button>
           </div>
@@ -37,16 +37,19 @@
     </div>
     {#if !visibilty}
       <button class="addbtn" on:click={() => {visibilty = !visibilty}}>
-        <svg width="13" height="13"><path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" fill="currentColor" fill-rule="evenodd"></path></svg>
+        <svg width="13" height="13">
+          <path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" fill="currentColor" fill-rule="evenodd">
+          </path>
+        </svg>
       </button>
     {/if}
-    <form style="display:grid; place-items: center;" >
+    <form class = "form" >
       {#if visibilty}
-        <input type="text" id="title" placeholder="eg. Finish English HW" style="font-size: 0.7em;  padding: 1em;  width: 200%;" bind:value={title}>
-        <textarea type="text" id="description" placeholder="description" style="font-size: 0.6em; padding: 1.5em; width: 200%; resize:none; margin-bottom: 1.5em;" bind:value={description}/>
-        <div style="display:flex;" >
-          <button class="addbtn" style="font-size: 0.6em; margin-right: 2em;" on:click={() => {visibilty = !visibilty}}> Cancel </button>
-          <button class="addbtn" type="button" style="font-size: 0.6em;" on:click={() => {
+        <input type="text" id="title" placeholder="eg. Finish English HW" class = "title-input" bind:value={title}>
+        <textarea type="text" id="description" placeholder="description" class="description-input"  bind:value={description}/>
+        <div class="flex" >
+          <button class="addbtn" on:click={() => {visibilty = !visibilty}}> Cancel </button>
+          <button class="addbtn" type="button" on:click={() => {
             todos.push({content: description, name: title,  important: false, id: id++})
             todos = todos
             visibilty = !visibilty
@@ -61,6 +64,14 @@
     box-shadow: none;
     border-radius: 15px;
     background: rgba(23, 27, 43, 0.5);
+    font-size: 0.6em; 
+    margin-right: 2em;
+  }
+  .delete {
+    height: 30px;
+    display: grid;
+    place-items: center;
+    box-shadow: none;
   }
   .delete:active{
     background-color: none;
@@ -79,10 +90,10 @@
     font-size: 0.8em;
   }
   .description {
-    font-size: 0.6em; 
+    font-size: 0.7em; 
   }
   .todos {
-    width : 70%; 
+    width : 95%; 
   }
   .todo {
     background: rgba(23, 27, 43, 0.5);
@@ -105,16 +116,69 @@
   header.main h1 {
     margin: 0
   }
-  .btn1 {
-    height: 30px;
+  .dot {
+    height: 20px;
+    width: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: inline-block;
+  } 
+  .top-g {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .form {
     display: grid;
     place-items: center;
   }
-  .dot {
-      height: 25px;
-      width: 25px;
-      border: 2px solid white;
-  border-radius: 50%;
-  display: inline-block;
-  } 
+  .title-input {
+    font-size: 0.7em;  
+    padding: 1em;  
+    width: 200%;
+  }
+  .description-input {
+    font-size: 0.6em; 
+    padding: 1.5em; 
+    width: 200%; 
+    resize:none; 
+    margin-bottom: 1.5em;
+  }
+  .flex {
+    display: flex;
+  }
+  @media only screen and (min-width:623px) {
+    .todos {
+      width: 90%;
+    }
+  }
+  @media only screen and (min-width: 729px) {
+    .todo h6 {
+      font-size: 1em;
+    }
+    .description {
+      font-size: 0.7em;
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+    .description {
+      font-size: 0.85em;
+    }
+  }
+  @media only screen and (min-width: 1280px) {
+    .description {
+      font-size: 0.6em;
+    }
+    .todo h6 {
+      font-size: 0.9em;
+    }
+  }
+  @media only screen and (min-width: 1680px) {
+    .description {
+      font-size: 0.5em;
+    }
+    .todo h6 {
+      font-size: 0.8em;
+    }
+  }
 </style>
