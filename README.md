@@ -6,9 +6,9 @@
 
 Zach - mostly created the base frontend and some backend
 
-Aadi - mostly helped with servers and backend
+Aadi - mostly helped with apis and backend servers
 
-Vaibhav - 50/50 on frontend and backend
+Vaibhav - created apis, manages deployments and servers, database, and frontend features
 
 Devan - Marketing
 
