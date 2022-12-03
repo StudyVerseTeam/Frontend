@@ -8,13 +8,7 @@ export async function load({params}) {
       token: params.token
     }
     console.log(`${import.meta.env.VITE_VERIFY_URL}/api/auth`)
-    const res = await fetch(`${import.meta.env.VITE_VERIFY_URL}/email/auth`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(tokenData)
-    })
+    const res = await fetch(`${import.meta.env.VITE_VERIFY_URL}/email/auth?token=${params.token}`)
     const data = await res.json()
     console.log(data)
     if (data.Error == "Token invalid") {
