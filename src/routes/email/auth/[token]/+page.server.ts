@@ -4,8 +4,19 @@ import {redirect} from '@sveltejs/kit'
 let email = '';
 export async function load({params}) {
   if (params.token) {
-    const res = await fetch(`${import.meta.env.VITE_VERIFY_URL}/email/auth?token=${params.token}`)
+    const tokenData = {
+      token: params.token
+    }
+    console.log(`${import.meta.env.VITE_VERIFY_URL}/api/auth`)
+    const res = await fetch(`${import.meta.env.VITE_VERIFY_URL}/email/auth`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(tokenData)
+    })
     const data = await res.json()
+    console.log(data)
     if (data.Error == "Token invalid") {
       throw error(404, 'Not Found')
     }
