@@ -67,13 +67,13 @@
         <button class="btn" type="button" style="background-color: rgb(65, 75, 117); border-radius: 20px;" on:click={() => {location.href = "/studysets"}}>Back</button>
       <button class="btn" type="button" on:click={() => {
         let error = false
-        if (name.length == 0 || data.set.cards.length < 2) {
+        if (name.trim().length == 0 || data.set.cards.length < 2) {
            document.getElementById('error').style.display = 'block'
            document.getElementById('error')?.scrollIntoView()
            error = true
         } else {
         for (let i = 0; i < data.set.cards.length; i ++) {
-          if (data.set.cards.find(e => e.term === '' || e.definition == '')) {
+          if (data.set.cards.find(e => e.term.trim() === '' || e.definition.trim() == '')) {
             document.getElementById('error').style.display = 'block'
             document.getElementById('error')?.scrollIntoView()
             error = true

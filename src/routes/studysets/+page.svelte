@@ -45,7 +45,7 @@
 </main>
 <style>
   .set a{
-    font-size: 0.8em;
+    font-size: 1em;
   }
   .sets{
     width: 100%;
