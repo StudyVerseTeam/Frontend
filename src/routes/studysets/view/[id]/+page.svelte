@@ -10,12 +10,16 @@
 <svelte:window on:keydown={(e) => {
   if (e.key == "ArrowRight") 
   {
-    index ++
+  index ++
+  visible = true
+  visible = visible
     if (index > data.set.cards.length - 1) {
       index -= 2 
     } 
     } else if (e.key == "ArrowLeft") {
-      index --
+    index --
+    visible = true
+    visible = visible
     if (index < 0) {
       index += 2 
     } 
