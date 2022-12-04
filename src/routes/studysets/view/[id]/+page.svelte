@@ -199,6 +199,7 @@
     }
     .container {
       display: block;
+      width: 100%;
     }
     .other-half {
       display: none;
