@@ -4,8 +4,8 @@
 <script lang="ts">
   export let data;
   let name = data.set.name;
-  let id = 1
   let setId = 1
+  let id = 1
   if (typeof window !== "undefined") {
     if (localStorage.getItem("studyset-id") !== null ) {
       setId = JSON.parse(localStorage.getItem("studyset-id")!)
@@ -13,7 +13,9 @@
       localStorage.setItem("studyset-id", JSON.stringify(setId))
     }
   }
-  
+  if (typeof data.set.cards !== "undefined") {
+   id = Math.max(...data.set.cards.map(o => o.id)) + 1
+  } 
 </script>
 <main>
   <div class="container">
@@ -29,11 +31,11 @@
           <div class="card">
             <header style="display: flex;">
               <button type="button" class="btn" on:click={
-                      () => {
+                                    () => {
                         let index = data.set.cards.findIndex(object => {
                           return object.id === card.id;
-                        });
-                        data.set.cards.splice(index, 1)
+                          });
+                          data.set.cards.splice(index, 1)
                         data.set.cards = data.set.cards
                       }
               }>Delete</button>
@@ -57,7 +59,7 @@
             term: "",
             definition: "",
             id: id++
-          })
+            }) 
             data.set.cards = data.set.cards
         }}>+ Add</button>
       </div>
@@ -65,7 +67,7 @@
         <button class="btn" type="button" style="background-color: rgb(65, 75, 117); border-radius: 20px;" on:click={() => {location.href = "/studysets"}}>Back</button>
       <button class="btn" type="button" on:click={() => {
         let error = false
-        if (name.length == 0 || data.set.cards.length == 0) {
+        if (name.length == 0 || data.set.cards.length < 2) {
            document.getElementById('error').style.display = 'block'
            document.getElementById('error')?.scrollIntoView()
            error = true

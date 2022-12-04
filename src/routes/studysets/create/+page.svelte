@@ -27,7 +27,7 @@
     <form class="form" action="">
       <input type="text" placeholder="Title" bind:value={name} required>
       <div id="error" style="background-color: rgb(117, 65, 76); border-radius: 15px; padding: 1em; margin-top: 2em; margin-bottom: 2em; display: none;">
-          PLEASE HAVE A TITLE, AND AT LEAST ONE CARD. MAKE SURE ALL CARDS HAVE A TERM AND A DEFINITION.
+          PLEASE HAVE A TITLE, AND AT LEAST TWO CARDS. MAKE SURE ALL CARDS HAVE A TERM AND A DEFINITION.
         </div>
       <div class="cards">
         {#each cards as card} 
@@ -71,7 +71,7 @@
         <button class="btn" type="button" style="background-color: rgb(65, 75, 117); border-radius: 20px;" on:click={() => {location.href = "/studysets"}}>Back</button>
       <button class="btn" type="button" on:click={() => {
         let error = false
-        if (name.length == 0 || cards.length == 0) {
+        if (name.length == 0 || cards.length < 2) {
            document.getElementById('error').style.display = 'block'
            document.getElementById('error')?.scrollIntoView()
            error = true
