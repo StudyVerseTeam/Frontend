@@ -66,7 +66,7 @@
 </main>
 <style>
   .container {
-    padding: 3em 10em;
+    padding: 3em 8em;
   }
   .arrow-btn {
     display: grid;
@@ -81,9 +81,9 @@
   .card {
     padding: 2em;
     background-color: rgba(90, 104, 161, 0.8);
-    width: 50%;
+    width: 80%;
     border-radius: 25px;
-    height: 400px;
+    height: 600px;
     display: flex;
    transition: transform 0.6s;
    transform-style: preserve-3d; 
@@ -103,7 +103,7 @@
     cursor: pointer;
   }
   .card h6 {
-    font-size: 1.5em;
+    font-size: 2em;
     animation:  slide-right 2s forwards;
     transform:translateX(-30%);
   }
@@ -123,6 +123,26 @@
   .left {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
+  }
+  @media only screen and (max-width: 1024px) {
+    .card {
+      height: 500px;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .card {
+      width: 100%;
+    }
+  }
+  @media only screen and (max-width: 821px ) {
+    .container {
+      padding: 1em 5em;
+    }
+  }
+  @media only screen and (max-width: 598px) {
+    .container{
+      padding: 0.5em 1em;
+    }
   }
 </style>
 

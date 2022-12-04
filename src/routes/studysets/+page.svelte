@@ -72,19 +72,9 @@
   header.main h1 {
     margin: 0
   }
-  @media only screen and (min-width: 729px) {
-    .set h6 {
-      font-size: 1em;
-    }
-  }
-  @media only screen and (min-width: 1280px) {
-    .set h6 {
-      font-size: 0.9em;
-    }
-  }
-  @media only screen and (min-width: 1680px) {
-    .set h6 {
-      font-size: 0.8em;
+  @media only screen and (max-width: 1700px) {
+    .set {
+      width: 80%;
     }
   }
 </style>

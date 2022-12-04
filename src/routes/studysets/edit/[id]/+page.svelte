@@ -17,8 +17,8 @@
 </script>
 <main>
   <div class="container">
-    <h1>Create</h1>
-    <form action="">
+    <h1>Edit</h1>
+    <form class="form" action="">
       <input type="text" placeholder="Title" bind:value={name} required>
       <div id="error" style="background-color: rgb(117, 65, 76); border-radius: 15px; padding: 1em; margin-top: 2em; margin-bottom: 2em; display: none;">
           PLEASE HAVE A TITLE, AND AT LEAST ONE CARD. MAKE SURE ALL CARDS HAVE A TERM AND A DEFINITION.
@@ -28,10 +28,10 @@
         {#each data.set.cards as card} 
           <div class="card">
             <header style="display: flex;">
-              <button class="btn" on:click={
+              <button type="button" class="btn" on:click={
                       () => {
                         let index = data.set.cards.findIndex(object => {
-                          return object.id === 3;
+                          return object.id === card.id;
                         });
                         data.set.cards.splice(index, 1)
                         data.set.cards = data.set.cards
@@ -108,7 +108,7 @@
   }
   .container {
     padding: 0.5em 14em;
-    width: 80%;
+    width: 100%;
   }
   .card {
     margin-bottom: 1em;
@@ -129,5 +129,29 @@
   }
   input {
     border-bottom: 2px solid white
+  }
+
+  @media only screen and (max-width: 1712px) {
+    .container {
+      padding: 3em 10em;
+    }
+    .form {
+      height: 100%;
+    }
+  }
+  @media only screen and (max-width: 1400px) {
+    .container {
+      padding: 5em 7em;
+    }
+  }
+  @media only screen and (max-width: 821px ) {
+    .container {
+      padding: 5em 5em;
+    }
+  }
+  @media only screen and (max-width: 598px) {
+    .container{
+      padding: 1em 5em;
+    }
   }
 </style>
