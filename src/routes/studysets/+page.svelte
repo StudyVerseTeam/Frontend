@@ -3,13 +3,7 @@
 </svelte:head>
 <script lang="ts">
   let id = 0
-  let sets = [
-    {
-      name: "My Study Set",
-      id: id++,
-      cards : [{term: 'Who is the best', definition: 'Studyverse!!'}, {term: "Who is the worst", definition:"Quizziz!!!"}]
-    },
-  ]
+  let sets = []
   if (typeof window !== "undefined") {
     if (localStorage.getItem("sets") ) {
       sets = JSON.parse(localStorage.getItem("sets")!)
@@ -26,18 +20,31 @@
     <div class="sets" >
       {#each sets as set}
         <div class="set">
-        <div class="top-g"> 
-          <h6>{set.name}</h6>
-        </div>
-        <p>{set.cards.length} {set.cards.length == 1 ? "term" : "terms"}</p>
+          <div class="top-g" style="display:flex; justify-content: space-between"> 
+          <a href={'/studysets/view/' + set.id}>{set.name}</a>
+          <button style="box-shadow: none; font-size: 0.6em;" on:click={() => {
+            const indexOfObject = sets.findIndex(object => {
+              return object.id === set.id;
+            });
+            sets.splice(indexOfObject, 1)
+            sets = sets
+            localStorage.setItem("sets", JSON.stringify(sets))
+          }}>Delete</button>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <p>{set.cards.length} {set.cards.length == 1 ? "term" : "terms"}</p>
+            <button style="box-shadow: none; font-size: 0.6em;" on:click={() => {location.href = '/studysets/edit/' + set.id}}>Edit</button>
+          </div>
         </div>
       {/each}
+      <button style=";box-shadow: none; border-radius: 15px; background-color: rgba(23, 27, 43, 0.5);" on:click={() => {
+        location.href = '/studysets/create'
+      }}>Create</button>
     </div>
-    <form>
   </div>
 </main>
 <style>
-  .set h6 {
+  .set a{
     font-size: 0.8em;
   }
   .sets{

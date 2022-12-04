@@ -5,6 +5,7 @@
   export let data:any;
   let index = 0
   let visible = false
+  let cardsElem 
 </script>
 <svelte:window on:keydown={(e) => {
   if (e.key == "ArrowRight") 
@@ -26,7 +27,9 @@
     {#if typeof data.set.cards !== "undefined"}
       <h2>{data.set.name}</h2>
       <div class="cards">
-        <div class="card" on:click={() => {visible = !visible}} >
+        <div bind:this={cardsElem} class="card" on:click={() => {
+          visible = !visible
+          }} >
           {#if visible == false}
             <h6>{data.set.cards.at(index).term}</h6>
           {:else}
@@ -58,14 +61,10 @@
         </div>        
       </div>
     {/if}
+    <button style="margin-top: 2em;box-shadow: none;border-radius: 15px; background-color: rgb(30,34,54,1);" on:click={() => {location.href= '/studysets'}}>Back</button>
   </div>
 </main>
 <style>
-  .card:active {
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-  }
   .container {
     padding: 3em 10em;
   }
@@ -86,11 +85,14 @@
     border-radius: 25px;
     height: 400px;
     display: flex;
-    transition: 0.5s;
+   transition: transform 0.6s;
+   transform-style: preserve-3d; 
+     -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
   
-  -webkit-transition: 0.5s;
-  
-  -moz-transition: 0.5s;
+  -moz-transition: 0.6s;
+  -moz-transform-style: preserve-3d;
+
 
 	position: relative;
     justify-content: space-between;
@@ -102,7 +104,14 @@
   }
   .card h6 {
     font-size: 1.5em;
+    animation:  slide-right 2s forwards;
+    transform:translateX(-30%);
   }
+  @keyframes slide-right {
+  to {
+    transform:translateX(0);
+  }
+}
   .arrow-container {
     display: flex;
     width: 80%;
