@@ -22,8 +22,10 @@
 
     }
     }}></svelte:window>
-<main>
+    <main>
+      <div class="main-container">
   <div class="container">
+    <div class="half">
     {#if typeof data.set.cards !== "undefined"}
       <h2>{data.set.name}</h2>
       <div class="cards">
@@ -61,11 +63,78 @@
         </div>        
       </div>
     {/if}
-    <button style="margin-top: 2em;box-shadow: none;border-radius: 15px; background-color: rgb(30,34,54,1);" on:click={() => {location.href= '/studysets'}}>Back</button>
+    <button class="back-btn" style="" on:click={() => {location.href= '/studysets'}}>Back</button>
+    </div>
   </div>
+  <div class="other-half" >
+    <nav class="main-nav">
+      <ul>
+        <li>
+          <a href="/studysets">All Studysets</a>
+        </li>
+        <li>
+          <a href={"/studysets/edit/"+data.set.id}>Edit this set</a>
+        </li>
+        
+        <li>
+          <a href="/studysets/create">Create Studyset</a>
+        </li>
+
+        <li>
+          <a href="/todos">See todos</a>
+        </li>
+
+        <li>
+          <a href="/calendar">Calendar</a>
+        </li>
+
+        <li>
+          <a href="/membership">Upgrade Now!!</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+
+      </div>
+
 </main>
 <style>
+  .back-btn {
+    margin-top: 2em;
+    box-shadow: none;
+    border-radius: 15px;
+    background-color: rgb(30,34,54,1);
+  }
+  .other-half {
+    position: fixed;
+    right: 0;
+    padding: 2em;
+    background-color: rgb(30,34,54,1);
+    width: 20%;
+    height: 100vh;
+  }
+  .other-half ul {
+    list-style-type: none;
+  }
+  .other-half a {
+    border-bottom: none;
+  }
+  .other-half a:hover {
+    color: white !important;
+  }
+  .other-half li {
+    margin-bottom: 3em;
+  }
+  .other-half li:hover {
+    background-color: rgba(60, 67, 105, 0.8);
+    border-radius: 10px;
+  }
+  .main-container {
+    display: flex;
+  }
   .container {
+    width: 80%;
     padding: 3em 8em;
   }
   .arrow-btn {
@@ -127,6 +196,12 @@
   @media only screen and (max-width: 1024px) {
     .card {
       height: 500px;
+    }
+    .container {
+      display: block;
+    }
+    .other-half {
+      display: none;
     }
   }
   @media only screen and (max-width: 992px) {
