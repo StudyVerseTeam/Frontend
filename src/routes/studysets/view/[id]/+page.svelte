@@ -50,7 +50,7 @@
           flipped = !flipped 
           flipped = flipped
           }} >
-          <h6 style="font-size: 1em; position: absolute; {flipped == true ? 'bottom:0' : 'top:0'};" class="{flipped == true ? 'flipped' : ''}">{index + 1} / {data.set.cards.length}</h6>
+          <h6 style="backface-visibility: hidden; font-size: 1em; position: absolute; {flipped == true ? 'bottom:0' : 'top:0'};" class="{flipped == true ? 'flipped' : ''}">{index + 1} / {data.set.cards.length}</h6>
           {#if visible == false}
             <h6   style="position: absolute; {flipped == true ? 'bottom: 3em' : 'top: 3em'}; backface-visibility: hidden;">{data.set.cards.at(index).term}</h6>
           {:else}
