@@ -68,7 +68,7 @@
             </span>
             <header class="major">
               <div >
-                <h3 style="display: flex; align-items: center;"><a style="margin-right: 0.7em;" href="/signup" class="link">Organize your life</a><CheckCircle color="#42f548" weight="fill" size="{53}"/></h3>
+                <h3 style="display: flex; align-items: center;"><a style="margin-right: 0.7em;" href="/signup" class="link">Organize your life</a><CheckCircle color="#837AB6" weight="fill" size="{53}"/></h3>
               </div>
               <p>Organize your life by using the built in To-Do app, and agenda manager (both coming soon). No more needing to find seperate apps for school, everything is (almost) already here on StudyVerse.</p>
             </header>
