@@ -104,7 +104,7 @@
 							</span>
 							<header class="major">
                 <div class="">
-                  <h3 style='display: flex; align-items: center'><a style="margin-right: 0.7em" href="/signup" class="link">Work Together</a><Person weight="fill" size="{46}" color="#fffd85"/></h3>
+                  <h3 style='display: flex; align-items: center'><a style="margin-right: 0.7em" href="/signup" class="link">Work Together</a><Person weight="fill" size="{46}" color="#fffd85"/><Person weight="fill" size="{46}" color="#fffd85"/></h3>
                 </div>
 								<p>Work together with your friends by creating a customized calendar schedule (coming soon). It can be for studying times, playing games, and pretty much everything else.</p>
 							</header>
