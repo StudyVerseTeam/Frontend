@@ -1893,11 +1893,11 @@ header.major > :first-child:after {
 }
 
 header.major > p {
-  font-size: 0.7em;
-  font-weight: 600;
-  letter-spacing: 0.25em;
+  font-size: 0.8em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   margin-bottom: 0;
-  text-transform: uppercase;
+  text-transform: normal;
 }
 
 body.is-ie header.major > :first-child:after {
@@ -2830,10 +2830,10 @@ button:disabled,
 }
 
 .tiles article {
-  -moz-align-items: center;
-  -webkit-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -2846,14 +2846,11 @@ button:disabled,
     -ms-filter 1s ease, -webkit-filter 1s ease;
   transition: transform 0.25s ease, opacity 0.25s ease, filter 1s ease,
     -webkit-filter 1s ease;
-  padding: 4em 4em 2em 4em;
+  padding: 18vh 28vh 2vw 4vw;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   cursor: default;
-  height: 40vh;
-  max-height: 40em;
-  min-height: 23em;
   overflow: hidden;
   position: relative;
   width: 40%;
@@ -2866,6 +2863,7 @@ button:disabled,
 .tiles article header {
   position: relative;
   z-index: 3;
+  align-self: start;
 }
 
 .tiles article h3 {
@@ -3566,10 +3564,11 @@ body.is-preload #header.alt {
 }
 
 #banner > .inner .content p {
-  font-size: 0.7em;
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: normal;
+  margin-right: 13em;
 }
 
 #banner.major {

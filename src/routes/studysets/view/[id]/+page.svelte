@@ -2,8 +2,8 @@
   <link rel="stylesheet" href="/css/main.css">
 </svlete:head>
 <script lang="ts">
-  export let data:any;
-  let index = 0
+  export let data:any; let index = 0
+  let show: string = "show"
   let visible = false
   let cardsElem 
   let flipped = false
@@ -103,8 +103,28 @@
         data.set.cards = data.set.cards
         index = 0
         }}>sort</button>
+      <button class="back-btn" on:click={() => {
+        if ( show === "show" ) {
+          show = "hide"
+        } else show = "show"
+        }}> {show} </button>
     </div>
+    <div class="terms">
+      {#if show === "hide" } 
+        Terms: {data.set.cards.length}
+      {/if}
+      {#if typeof data.set.cards !== "undefined" && show == "hide"}
+        <div class="answers">
+          {#each data.set.cards as card}
+          <div class="key">
+              <p>{card.term}:</p>
+              <p>{card.definition}</p>
+          </div>
+               {/each}
+        </div>
+      {/if}
     </div>
+         </div>
   </div>
   <div class="other-half" >
     <nav class="main-nav">
@@ -140,10 +160,33 @@
 
 </main>
 <style>
+  .terms {
+    margin-top: 2em;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
   .btns {
     display: flex;
     width: 80%;
     justify-content: space-between;
+  }
+  .key {
+    background-color: rgba(47, 56, 88, 1);
+    box-shadow: 5px 3px 2px 10px #141826;
+    margin-bottom: 1em;
+    border-radius: 15px;
+    height: 70%;
+  }
+  .key p {
+    font-weight: normal;
+    margin: 0;
+    font-size: 0.8em; 
+    padding: 1em;
+  }
+  .answers {
+    margin-top: 2em;
+    flex-direction: column;
+    display: flex;
   }
   .flipped {
     transform: rotateX(180deg);
