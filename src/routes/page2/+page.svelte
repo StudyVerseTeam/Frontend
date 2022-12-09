@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<script>
+  import "../../../static/css/main.css"
+  import "../../../static/css/noscript.css"
+</script>
 <html lang="en">
   <head>
     <title>Study Verse</title>
@@ -7,10 +10,6 @@
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
-    <link rel="stylesheet" href="/css/main.css" />
-    <noscript
-      ><link rel="stylesheet" href="/css/noscript.css"
-    /></noscript>
   </head>
   <body class="is-preload">
     <!-- Wrapper -->

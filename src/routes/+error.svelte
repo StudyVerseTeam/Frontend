@@ -1,7 +1,9 @@
 <svelte:head>
-  <link rel="stylesheet" href="/css/main.css">
   <title>Page Not Found</title>
 </svelte:head>
+<script>
+  import "../../static/css/main.css"
+</script>
 <main>
   <div class="container">
     <div class="text-container">

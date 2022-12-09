@@ -1,7 +1,5 @@
-<svelte:head>
-  <link rel="stylesheet" href="/css/main.css">
-</svelte:head>
 <script lang="ts">
+  import "../../../../../static/css/main.css"
   export let data;
   let name = data.set.name;
   let setId = 1

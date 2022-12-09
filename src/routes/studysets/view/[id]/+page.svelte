@@ -1,7 +1,5 @@
-<svlete:head>
-  <link rel="stylesheet" href="/css/main.css">
-</svlete:head>
 <script lang="ts">
+  import "../../../../../static/css/main.css"
   export let data:any; let index = 0
   let show: string = "show"
   let visible = false

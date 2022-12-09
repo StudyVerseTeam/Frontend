@@ -1,6 +1,7 @@
-<!DOCTYPE html>
 <script>
   import {Person, Handshake, CheckCircle, Exam, Planet, Lightning} from "phosphor-svelte"
+  import "../../static/css/main.css"
+  import "../../static/css/noscript.css"
   // use later
   // import {user} from '../store.js'
 </script>
@@ -12,8 +13,6 @@
   name="viewport"
   content="width=device-width, initial-scale=1, user-scalable=no"
 />
-<link rel="stylesheet" href="/css/main.css" />
-<noscript><link rel="stylesheet" href="/css/noscript.css" type="text/css"/></noscript>
   <body class="is-preload">
     <!-- Wrapper -->
     <div id="wrapper">
@@ -63,9 +62,6 @@
         <section id="one" class="tiles">
           <!-- Tile 1-->
           <article>
-            <span class="image">
-              <img src="images/pic01.jpg" alt="" />
-            </span>
             <header class="major">
               <div >
                 <h3 style="display: flex; align-items: center;"><a style="margin-right: 0.7em;" href="/signup" class="link">Organize your life</a><CheckCircle color="#837AB6" weight="fill" size="{53}"/></h3>
@@ -75,9 +71,6 @@
           </article>
           <!-- Tile 2-->
           <article>
-            <span class="image">
-              <img src="images/pic02.jpg" alt="" />
-            </span>
             <header class="major">
               <div class="">
                 <h3 style="display: flex; align-items: center;"> <a href="/signup" class="link" style="margin-right: 0.7em">Grades</a> <Exam color="#05c3f2" weight="fill" size="{53}" /> </h3>
@@ -87,9 +80,6 @@
           </article>
           <!-- Tile 3-->
           <article>
-							<span class="image">
-								<img src="images/pic03.jpg" alt="" />
-							</span>
               <header class="major">
                 <div class="">
                   <h3 style='display: flex; align-items: center'><a style="margin-right: 0.7em" href="/signup" class="link">Help Others</a><Handshake weight="fill" color="#606b75" size="{53}"/></h3>
@@ -99,9 +89,6 @@
 					</article>
           <!-- Tile 4-->
           <article>
-							<span class="image">
-								<img src="images/pic04.jpg" alt="" />
-							</span>
 							<header class="major">
                 <div class="">
                   <h3 style='display: flex; align-items: center'><a style="margin-right: 0.7em" href="/signup" class="link">Work Together</a><Person weight="fill" size="{46}" color="#fffd85"/><Person weight="fill" size="{46}" color="#fffd85"/></h3>
@@ -111,9 +98,6 @@
 					</article>
           <!-- Tile 5-->
           <article>
-							<span class="image">
-								<img src="images/pic05.jpg" alt="" />
-							</span>
 							<header class="major">
                 <div class="">
                   <h3 style='display: flex; align-items: center'><a style="margin-right: 0.7em" href="/signup" class="link">Galaxies</a><Planet color="#6140f5" weight="fill" size="{53}"/></h3>
@@ -123,9 +107,6 @@
 					</article>
           <!-- Tile 6-->
           <article>
-							<span class="image">
-								<img src="images/pic06.jpg" alt="" />
-							</span>
 							<header class="major">
                 <div class="">
                   <h3 style='display: flex; align-items: center'><a style="margin-right: 0.7em" href="/signup" class="link">Meteors</a><Lightning color="#fff314" weight="fill" size="{53}"/></h3>

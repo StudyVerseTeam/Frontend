@@ -1,7 +1,5 @@
-<svelte:head>
-  <link rel="stylesheet" href="/css/main.css">
-</svelte:head>
 <script lang="ts">
+  import "../../../static/css/main.css"
   let id = 0
   let todos = [
     {content: "Here is your description", name:"This is the name", important: false, id: id++},
