@@ -1,0 +1,35 @@
+/* todo */
+body {
+  background-color: #252942;
+}
+.todo h6 {
+  color: white;
+}
+.todo .delete {
+  background-color: inherit;
+  border: none;
+}
+.todo .delete:hover {
+  cursor: pointer;
+}
+.description {
+  color: lightgray;
+}
+.addbtn {
+  border: none;
+  color: white;
+  width: 60px;
+  height: 50px;
+  text-align: center;
+}
+.addbtn:hover {
+  cursor:pointer;
+}
+.main h1 {
+  color: white;
+  font-size: 3.5em;
+  margin: 0.3em;
+}
+.top-g {
+  height: 50px;
+}

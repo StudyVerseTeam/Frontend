@@ -2,7 +2,7 @@
   <title>Page Not Found</title>
 </svelte:head>
 <script>
-  import "../../static/css/main.css"
+  import "$lib/css/error.css"
 </script>
 <main>
   <div class="container">

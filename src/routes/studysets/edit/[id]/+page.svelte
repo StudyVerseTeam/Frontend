@@ -1,5 +1,5 @@
 <script lang="ts">
-  import "../../../../../static/css/main.css"
+  import "$lib/css/viewSet.css"
   export let data;
   let name = data.set.name;
   let setId = 1

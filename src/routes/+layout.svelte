@@ -1,6 +1,3 @@
-<svelte:head>
-    <link rel="icon" href="/images/favicon.ico">
-</svelte:head>
 <style global>
   @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;800&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;800&family=Inter:wght@200;400;600&display=swap');

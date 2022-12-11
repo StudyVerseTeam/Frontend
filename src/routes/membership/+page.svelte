@@ -4,7 +4,6 @@
 <meta name="keywords" content="Pricing Plans, Free, $310, $530">
 <meta name="description" content="">
 <title>Home</title>
-<link rel="stylesheet" href="/css/membership.css" media="screen">
 <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
 <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
     <meta name="theme-color" content="#242943">
@@ -12,7 +11,9 @@
     <meta property="og:type" content="website">
 
 </svelte:head>
-   
+<script>
+  import "$lib/css/membership.css"
+</script> 
     
   <body class="u-body u-xl-mode" data-lang="en">
     <section class="u-align-center u-clearfix u-palette-1-dark-3 u-section-1" id="carousel_56ec">

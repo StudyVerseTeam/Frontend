@@ -1,5 +1,5 @@
 <script lang="ts">
-  import "../../../static/css/main.css"
+  import "$lib/css/todo.css"
   let id = 0
   let todos = [
     {content: "Here is your description", name:"This is the name", important: false, id: id++},
@@ -62,7 +62,8 @@
     box-shadow: none;
     border-radius: 15px;
     background: rgba(23, 27, 43, 0.5);
-    font-size: 0.6em; 
+    font-size: 0.8em; 
+    padding: 1em;
     margin-right: 2em;
   }
   .delete {
@@ -75,8 +76,7 @@
     background-color: none;
   }
   .addbtn:hover {
-    background: white;
-    color: rgba(23, 27, 43, 0.5);
+    background: #4A5788;
   }
   .container {
     display: flex;
@@ -108,11 +108,8 @@
     justify-content: space-around;
     width: 100%;
     height: 70%;
+    margin-bottom: 1em;
     border-bottom: 0.5px solid rgb(23, 27, 43);
-    margin-bottom: 1.2em;
-  }
-  header.main h1 {
-    margin: 0
   }
   .dot {
     height: 20px;
@@ -131,16 +128,29 @@
     place-items: center;
   }
   .title-input {
-    font-size: 0.7em;  
-    padding: 1em;  
+    font-size: 1.4em;  
+    padding: 1.2em;  
     width: 200%;
+    color: white;
+  }
+  input:focus, textarea:focus {
+    border: 2px solid #3c4268;
+    outline: none;
+  }
+  .title-input, .description-input {
+    background-color: #2C304B;
+    caret-color: #5d679e;
+    border: none;
+    font-size: 1em;
   }
   .description-input {
-    font-size: 0.6em; 
-    padding: 1.5em; 
+    font-size: 0.9em; 
+    padding: 1.4em; 
     width: 200%; 
-    resize:none; 
+    resize:none;
+    font-family: 'Inter';
     margin-bottom: 1.5em;
+    color: lightgrey;
   }
   .flex {
     display: flex;
@@ -155,28 +165,28 @@
       font-size: 1em;
     }
     .description {
-      font-size: 0.7em;
+      font-size: 0.8em;
     }
   }
   @media only screen and (min-width: 1000px) {
     .description {
-      font-size: 0.85em;
+      font-size: 0.8em;
     }
   }
   @media only screen and (min-width: 1280px) {
     .description {
-      font-size: 0.6em;
+      font-size: 0.8em;
     }
     .todo h6 {
-      font-size: 0.9em;
+      font-size: 1em;
     }
   }
   @media only screen and (min-width: 1680px) {
     .description {
-      font-size: 0.5em;
+      font-size: 0.8em;
     }
     .todo h6 {
-      font-size: 0.8em;
+      font-size: 1.1em;
     }
   }
 </style>

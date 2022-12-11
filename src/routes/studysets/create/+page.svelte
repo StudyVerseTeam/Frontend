@@ -1,7 +1,7 @@
 <svelte:head>
 </svelte:head>
 <script lang="ts">
-  import "../../../../static/css/main.css"
+  import "$lib/css/createSet.css"
   export let data;
   let name = "";
   let id = 1

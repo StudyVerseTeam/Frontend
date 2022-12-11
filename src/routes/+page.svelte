@@ -1,9 +1,6 @@
 <script>
   import {Person, Handshake, CheckCircle, Exam, Planet, Lightning} from "phosphor-svelte"
-  import "../../static/css/main.css"
-  import "../../static/css/noscript.css"
-  // use later
-  // import {user} from '../store.js'
+  import "$lib/css/home.css"
 </script>
 <head>
   <title>Studyverse</title>
@@ -13,11 +10,11 @@
   name="viewport"
   content="width=device-width, initial-scale=1, user-scalable=no"
 />
-  <body class="is-preload">
+  <body >
     <!-- Wrapper -->
-    <div id="wrapper">
+    <div >
       <!-- Header -->
-      <header id="header" class="alt">
+      <header id="header">
         <a href="/" class="logo">
           <strong>Study</strong> <span>Verse</span></a>
         <nav>
@@ -39,8 +36,7 @@
 
       <!-- Banner -->
       <section id="banner" class="major">
-        <div class="inner">
-          <header class="major">
+          <header >
             <h1>Studyverse</h1>
           </header>
           <div class="content">
@@ -49,11 +45,10 @@
             </p>
             <ul class="actions">
               <li>
-                <a href="#one" class="button next scrolly">See the features</a>
+                <a href="#one" >See the features</a>
               </li>
             </ul>
           </div>
-        </div>
       </section>
 
       <!-- Main -->
@@ -63,18 +58,14 @@
           <!-- Tile 1-->
           <article>
             <header class="major">
-              <div >
-                <h3 style="display: flex; align-items: center;"><a style="margin-right: 0.7em;" href="/signup" class="link">Organize your life</a><CheckCircle color="#837AB6" weight="fill" size="{53}"/></h3>
-              </div>
+                <h3 ><a  href="/signup" class="link">Organize your life</a><CheckCircle color="#837AB6" weight="fill" size="{53}"/></h3>
               <p>Organize your life by using the built in To-Do app, and agenda manager (both coming soon). No more needing to find seperate apps for school, everything is (almost) already here on StudyVerse.</p>
             </header>
           </article>
           <!-- Tile 2-->
           <article>
             <header class="major">
-              <div class="">
-                <h3 style="display: flex; align-items: center;"> <a href="/signup" class="link" style="margin-right: 0.7em">Grades</a> <Exam color="#05c3f2" weight="fill" size="{53}" /> </h3>
-              </div>
+              <h3> <a href="/signup" class="link" >Grades</a> <Exam color="#05c3f2" weight="fill" size="{53}" /> </h3>
               <p>Stop procrastinating, start doing. Get motivated to study by gaining awards and reputation (coming soon). You can flex on your peers all while maintaining good grades.</p>
             </header>
           </article>
@@ -82,7 +73,7 @@
           <article>
               <header class="major">
                 <div class="">
-                  <h3 style='display: flex; align-items: center'><a style="margin-right: 0.7em" href="/signup" class="link">Help Others</a><Handshake weight="fill" color="#606b75" size="{53}"/></h3>
+                  <h3 ><a  href="/signup" class="link">Help Others</a><Handshake weight="fill" color="#606b75" size="{53}"/></h3>
                 </div>
 								<p>Enhance your teaching skills! Create planets (Study Sets) (coming soon) and share them with friends. You gain awards and reputation whenever someone plays it!</p>
 							</header>
@@ -91,7 +82,7 @@
           <article>
 							<header class="major">
                 <div class="">
-                  <h3 style='display: flex; align-items: center'><a style="margin-right: 0.7em" href="/signup" class="link">Work Together</a><Person weight="fill" size="{46}" color="#fffd85"/><Person weight="fill" size="{46}" color="#fffd85"/></h3>
+                  <h3 ><a  href="/signup" class="link">Work Together</a><Person weight="fill" size="{46}" color="#fff314"/><Person weight="fill" size="{46}" color="#fff314"/></h3>
                 </div>
 								<p>Work together with your friends by creating a customized calendar schedule (coming soon). It can be for studying times, playing games, and pretty much everything else.</p>
 							</header>
@@ -100,7 +91,7 @@
           <article>
 							<header class="major">
                 <div class="">
-                  <h3 style='display: flex; align-items: center'><a style="margin-right: 0.7em" href="/signup" class="link">Galaxies</a><Planet color="#6140f5" weight="fill" size="{53}"/></h3>
+                  <h3 ><a  href="/signup" class="link">Galaxies</a><Planet color="#6140f5" weight="fill" size="{53}"/></h3>
                 </div>
                 <p>Take your teaching game to the next level with galaxies (courses) (coming soon). Galaxies are bundles of planets combined with stars (lectures/typed papers) to help enhance student's skills.</p>
 							</header>
@@ -109,7 +100,7 @@
           <article>
 							<header class="major">
                 <div class="">
-                  <h3 style='display: flex; align-items: center'><a style="margin-right: 0.7em" href="/signup" class="link">Meteors</a><Lightning color="#fff314" weight="fill" size="{53}"/></h3>
+                  <h3 ><a  href="/signup" class="link">Meteors</a><Lightning color="#fff314" weight="fill" size="{53}"/></h3>
                 </div>
 								<p>Make graded assignments with Meteors (assignments) (coming soon). Monotoring your students (or friends) progress is a great way to gain understanding and provide for them better.</p>
 							</header>
@@ -119,29 +110,4 @@
         <!-- Two -->
       </div>
 
-      <!-- Contact -->
-
-      <!-- Footer -->
-      <footer id="footer">
-        <div class="inner">
-          <ul class="copyright">
-            <li></li>
-            <li>
-              <a href="#">
-                PLACE HOLDER Give copyright credit here
-              </a>
-            </li>
-          </ul>
-        </div>
-      </footer>
-    </div>
-
-    <!-- Scripts -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/jquery.scrolly.min.js"></script>
-    <script src="/js/jquery.scrollex.min.js"></script>
-    <script src="/js/browser.min.js"></script>
-    <script src="/js/breakpoints.min.js"></script>
-    <script src="/js/util.js"></script>
-    <script src="/js/main.js"></script>
   </body>

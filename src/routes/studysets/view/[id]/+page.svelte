@@ -1,5 +1,5 @@
 <script lang="ts">
-  import "../../../../../static/css/main.css"
+  import "$lib/css/viewSet.css"
   export let data:any; let index = 0
   let show: string = "show"
   let visible = false

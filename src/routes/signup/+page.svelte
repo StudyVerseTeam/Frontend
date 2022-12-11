@@ -1,7 +1,7 @@
 <script lang="ts">
   //import {user} from '../../store'
   export let form: { email: string};
-  const email = "some@gmail.com"
+  import "$lib/css/login.css"
   import {onMount} from "svelte"
     import { loadFull } from "tsparticles";
     let ParticlesComponent;
@@ -95,8 +95,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"><link rel="stylesheet" href="css/login.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 </svelte:head>
 <!-- partial:index.partial.html -->
@@ -136,7 +135,7 @@
 <!-- partial -->
 <script src="https://cldup.com/S6Ptkwu_qA.js"></script>
 
-<script  src="/js/input.js"></script>
+<script  src="$lib/js/input.js"></script>
 </body>
 <style>
   .btn1 {

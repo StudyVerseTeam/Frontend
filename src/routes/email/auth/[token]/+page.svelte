@@ -101,7 +101,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
-<link rel="stylesheet" href="/css/login.css">
+<link rel="stylesheet" href="$lib/css/login.css">
 
 
 </svelte:head>
@@ -172,7 +172,7 @@
 <!-- partial -->
 <script src="https://cldup.com/S6Ptkwu_qA.js"></script>
 
-<script  src="/js/input.js"></script>
+<script  src="$lib/js/input.js"></script>
 
 </body>
 {/if} 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import "../../../static/css/main.css"
+  import "$lib/css/seeAllSets.css"
   let id = 0
   let sets = []
   if (typeof window !== "undefined") {

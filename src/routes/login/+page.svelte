@@ -1,6 +1,7 @@
 <script lang="ts">
   export let form: {error: boolean, msg: any, exists: boolean}
   //import {user} from '../../store'
+  import "$lib/css/login.css" 
   import {onMount} from "svelte"
     import { loadFull } from "tsparticles";
           let ParticlesComponent;
@@ -105,7 +106,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="/css/login.css" />
   </svelte:head>
   <main>
     {#if form?.error}
