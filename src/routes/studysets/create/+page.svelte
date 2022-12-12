@@ -1,7 +1,8 @@
 <svelte:head>
 </svelte:head>
 <script lang="ts">
-  import "$lib/css/createSet.css"
+  import Trash from "phosphor-svelte/lib/Trash";
+  import "$lib/css/createSet.css" 
   export let data;
   let name = "";
   let id = 1
@@ -26,14 +27,15 @@
     <h1>Create</h1>
     <form class="form" action="">
       <input type="text" placeholder="Title" bind:value={name} required>
-      <div id="error" style="background-color: rgb(117, 65, 76); border-radius: 15px; padding: 1em; margin-top: 2em; margin-bottom: 2em; display: none;">
+      <div id="error" >
           PLEASE HAVE A TITLE, AND AT LEAST TWO CARDS. MAKE SURE ALL CARDS HAVE A TERM AND A DEFINITION.
         </div>
       <div class="cards">
         {#each cards as card} 
           <div class="card">
-            <header style="display: flex;">
-              <button class="btn" type="button" on:click={
+            <header class="top-g">
+              <p>{cards.indexOf(card) + 1 }</p>
+              <button class="deletebtn soft-fg" type="button" on:click={
                       () => {
                         let index = cards.findIndex(object => {
                           return object.id === card.id;
@@ -42,22 +44,22 @@
                         console.log(cards)
                         cards = cards
                       }
-              }>Delete</button>
+              }><Trash size={27} /></button>
             </header>
-            <div style="display: flex; margin-bottom: 1em;">
-              <input style="margin-right: 2em" type="text" bind:value={card.term} placeholder="Term">
-              <input type="text" bind:value={card.definition} placeholder="Definition">
+            <div class="inputs">
+              <input class="input-set term" type="text" bind:value={card.term} placeholder="Term">
+              <input class="input-set" type="text" bind:value={card.definition} placeholder="Definition">
             </div>
-            <div style="display:flex; justify-content: space-between;">
-              <h5 style="color: lightgray">Term</h5>
-              <h5 style="color: lightgray">Definition</h5>
+            <div class="infos">
+              <h5 class="soft-fg">Term</h5>
+              <h5 class="soft-fg">Definition</h5>
             </div>
           </div>
         {/each}
       </div>
 
       <div class="card" style="display: flex; justify-content: center; align-items: center;">
-        <button class="btn" type="button" style="border-bottom: 0.5rem solid rgb(65, 75, 117)" on:click = {() => {
+        <button class="btn add-btn" type="button" style="" on:click = {() => {
           cards.push({
             term: "",
             definition: "",
@@ -65,10 +67,10 @@
           })
           cards = cards
           console.log(cards)
-        }}>+ Add</button>
+          }}>+ Add</button>
       </div>
       <div style="display: flex; justify-content: space-between;">
-        <button class="btn" type="button" style="background-color: rgb(65, 75, 117); border-radius: 20px;" on:click={() => {location.href = "/studysets"}}>Back</button>
+        <button class="btn" type="button" style="background-color: rgb(65, 75, 117); border-radius: 15px;" on:click={() => {location.href = "/studysets"}}>Back</button>
       <button class="btn" type="button" on:click={() => {
         let error = false
         if (name.trim().length == 0 || cards.length < 2) {
@@ -99,62 +101,9 @@
           location.href = '/studysets'
          }
       }}
-        style="background-color: rgb(81, 94, 145); border-radius: 20px;">Create</button>
+        style="background-color: rgb(81, 94, 145); border-radius: 15px;">Create</button>
 
       </div>
           </form>
   </div>
 </main>
-<style>
-  .btn {
-    box-shadow: none;
-  }
-  .container {
-    padding: 0.5em 14em;
-    width: 100%;
-  }
-  .card {
-    margin-bottom: 1em;
-    border-radius: 15px;
-    background-color: rgb(43, 50, 79);
-    padding: 1em;
-  }
-  .cards {
-    margin-top: 3em;
-    margin-bottom: 3em;
-  }
-  input {
-    background-color: rgb(43, 50, 79);
-    opacity: 1;
-  }
-  input:hover, input:active, input:focus {
-    box-shadow: none;
-  }
-  input {
-    border-bottom: 2px solid white
-  }
-  @media only screen and (max-width: 1712px) {
-    .container {
-      padding: 3em 10em;
-    }
-    .form {
-      height: 100%;
-    }
-  }
-  @media only screen and (max-width: 1400px) {
-    .container {
-      padding: 5em 7em;
-    }
-  }
-  @media only screen and (max-width: 821px ) {
-    .container {
-      padding: 5em 5em;
-    }
-  }
-  @media only screen and (max-width: 598px) {
-    .container{
-      padding: 5em 1em;
-    }
-  }
-
-</style>

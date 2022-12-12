@@ -1,1 +1,140 @@
-/* edit sets */
+/* create sets */
+/* vars */
+:root {
+  --main-bg: #242943;
+  --soft-fg: lightgray;
+  --card-bg: rgb(43, 50, 79);
+  --fg: white;
+  --contrast-fg: #FFE5B4;
+  --btn-color: rgb(65, 75, 117);
+  --speddy-font: 'Ubuntu';
+  --error-font: 'Inter'
+}
+body {
+  color: white;
+  background-color: var(--main-bg);
+}
+main {
+  display: flex;
+  justify-content: center;
+}
+.soft-fg {
+  color: var(--soft-fg); 
+}
+.add-btn {
+  font-family: var(--speddy-font) !important;
+  border-radius: 5px;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom: 0.34rem solid var(--btn-color) !important;
+}
+.add-btn:hover {
+  color: var(--contrast-fg);
+  border-color: var(--contrast-fg) !important;
+}
+.btn {
+  box-shadow: none;
+  background-color: inherit;
+  border: none;
+  color: var(--fg);
+  font-size: 1.3em;
+  padding: 0.8em;
+  font-family: var(--speddy-font) !important;
+}
+#error {
+  background-color: rgb(117, 65, 76);
+  border-radius: 15px;
+  padding: 1em; 
+  margin-top: 2em; 
+  margin-bottom: 2em; 
+  display: none;
+  font-family: var(--error-font);
+}
+.top-g {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--main-bg);
+}
+.deletebtn {
+  background-color: inherit;
+  border: none;
+}
+.infos {
+  display:flex;
+  justify-content: space-between;
+}
+.infos h5 {
+  font-family: var(--speddy-font) !important;
+}
+.term {
+  margin-right: 2em;
+}
+.input-set {
+  width: 50% !important;
+}
+.inputs {
+  display: flex; 
+  margin-top: 0.5em;
+}
+button:hover {
+  cursor: pointer;
+}
+.container {
+  padding: 0.5em 14em;
+  width: 100% !important;
+}
+.card {
+  margin-bottom: 1em;
+  border-radius: 15px;
+  background-color: var(--card-bg);
+  padding: 1em;
+  width: 99%;
+}
+.cards {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+input:hover, input:active, input:focus {
+  box-shadow: none;
+}
+input:first-child {
+  width: 100%;
+}
+input {
+  border: none !important;
+  color: var(--fg);
+  background: #353d5e !important;
+  padding: 0.5em;
+  font-size: 1em;
+  border-radius: 5px;
+}
+input:focus {
+  outline: none;
+  border-bottom: 3px solid #4d598a !important;
+}
+@media only screen and (max-width: 1712px) {
+  .container {
+    padding: 3em 10em;
+  }
+  .form {
+    height: 100%;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .container {
+    padding: 5em 7em;
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width: 821px ) {
+  .container {
+    padding: 5em 5em;
+  }
+}
+@media only screen and (max-width: 598px) {
+  .container{
+    padding: 3em 3em;
+  }
+}
+
+

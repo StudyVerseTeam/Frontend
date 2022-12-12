@@ -35,44 +35,6 @@
           </div>
         </div>
       {/each}
-      <button style=";box-shadow: none; border-radius: 15px; background-color: rgba(23, 27, 43, 0.5);" on:click={() => {
-        location.href = '/studysets/create'
-      }}>Create</button>
     </div>
   </div>
 </main>
-<style>
-  .set a{
-    font-size: 1em;
-  }
-  .sets{
-    width: 100%;
-    display: grid;
-    place-items: center;
-    grid-template-columns: 1fr;
-  }
-  .set{
-    background: rgba(23, 27, 43, 0.5);
-    padding: 0.7em;
-    width: 50%;
-    padding-bottom: 5px;
-    border-radius: 15px;
-    margin-bottom: 1em;
-  }
-  header.main {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    height: 70%;
-    border-bottom: 0.5px solid rgb(23, 27, 43);
-    margin-bottom: 1.2em;
-  }
-  header.main h1 {
-    margin: 0
-  }
-  @media only screen and (max-width: 1700px) {
-    .set {
-      width: 80%;
-    }
-  }
-</style>
